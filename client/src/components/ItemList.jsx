@@ -11,7 +11,7 @@ export default (props) => {
                     return(
                         <div key={i}>
                             <div>
-                            <img src={item.imageUrl} alt="Girl in a jacket" width="100" height="90"/>
+                            <img src={item.imageUrl} width="100" height="90"/>
                                 <div>
                                     <p>{item.pirateName}</p>
                                     <button onClick={ e => {navigate("/pirate/" + item._id)} }>View Pirate</button>
