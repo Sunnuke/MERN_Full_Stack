@@ -1,0 +1,29 @@
+{
+  "name": "MERN_Full_Stack",
+  "version": "1.0.0",
+  "description": "This project will be a practice on creating a basic full-stack MERN Application.",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.11.13",
+    "react": "^17.0.1",
+    "socket.io": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sunnuke/MERN_Full_Stack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sunnuke/MERN_Full_Stack/issues"
+  },
+  "homepage": "https://github.com/Sunnuke/MERN_Full_Stack#readme"
+}
