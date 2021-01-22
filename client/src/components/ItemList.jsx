@@ -7,15 +7,15 @@ export default (props) => {
     return(
         <div>
             {
-                props.EXAMPLE.map((EXAMPLE, i) => {
+                props.items.map((item, i) => {
                     return(
                         <div key={i}>
                             <p>
-                                <Link to={"/EXAMPLE/" + EXAMPLE._id}>
+                                <Link to={"/EXAMPLE/" + item._id}>
                                     {EXAMPLE.example}
                                 </Link>
                                 | 
-                                <DeleteButton id={EXAMPLE._id} removingDOM={() => removingDOM(EXAMPLE._id)} />
+                                <DeleteButton id={item._id} removingDOM={() => removingDOM(item._id)} />
                             </p>
                         </div>
                     )
