@@ -4,14 +4,14 @@ import React from "react";
 export default (props) => {
     const { id, removingDOM } = props;
     const deleting = (e) => {
-        axios.delete("http://localhost:8000/api/!!!!NAME_HERE!!!!/" + id)
+        axios.delete("http://localhost:8000/api/pirate/" + id)
             .then(res => {
                 removingDOM();
             })
     }
     return(
             <button onClick={ e => {deleting(e)} }>
-                Delete
+                Walk The Plank
             </button>
     )
 }
