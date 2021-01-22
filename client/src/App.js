@@ -11,7 +11,7 @@ function App() {
       <Router>
         <ListPage path="pirate" />
         <FormPage path="pirate/new" />
-        <EditPage path="pirate/edit/:id" />
+        <EditPage path="pirate/:id" />
       </Router>
     </div>
   );
