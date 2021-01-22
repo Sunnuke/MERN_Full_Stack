@@ -1,10 +1,18 @@
-import logo from './logo.svg';
+import React from "react";
+import { Router } from "@reach/router";
 import './App.css';
+import ListPage from "./views/ListPage";
+import FormPage from "./views/FormPage";
+import EditPage from "./views/EditPage";
 
 function App() {
   return (
     <div className="App">
-      
+      <Router>
+        <ListPage path="pirate" />
+        <FormPage path="pirate/new" />
+        <EditPage path="pirate/edit/:id" />
+      </Router>
     </div>
   );
 }
