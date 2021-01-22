@@ -23,10 +23,10 @@ export default () => {
     }
 
     return(
-        <div>
-            <div>
-                <h1 style={{position: "absolute", justifySelf: "center"}}>Pirate Crew</h1>
-                <button style={{position: "absolute", justifySelf: "right"}} onClick={ e => {navigate("/pirate/new")} }>Add Pirate</button>
+        <div style={{width: "60%", margin: "0px auto"}}>
+            <div style={{display: "flex", justifyContent: "space-between"}}>
+                <h1 style={{position: "relative", justifySelf: "center"}}>Pirate Crew</h1>
+                <button style={{position: "relative", justifySelf: "right"}} onClick={ e => {navigate("/pirate/new")} }>Add Pirate</button>
             </div>
             <ItemList items={pirates} removingDOM={removingDOM} />
         </div>
