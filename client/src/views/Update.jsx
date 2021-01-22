@@ -10,6 +10,8 @@ export default (props) => {
     const [ price, setPrice ] = useState("");
     const [ description, setDescription ] = useState("");
     const [loaded, setLoaded] = useState(false);
+    const [ load, setLoad ] = useState(false);
+    const [ errors, setErrors ] = useState(false);
 
 
     useEffect(() => {
@@ -20,7 +22,16 @@ export default (props) => {
                 setDescription(res.data.description);
                 setLoaded(true);
         })
-            .catch(err => console.log(err));
+        .catch(err => {
+            const errorResponse = err.response.data.errors; // Get the errors from err.response.data
+            const errorArr = []; // Define a temp error array to push the messages in
+            for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
+                errorArr.push(errorResponse[key].message)
+            }
+            // Set Errors
+            setErrors(errorArr);
+            setLoad(true);
+        });
     }, [])
 
     const updating = (EXAMPLE) => {
@@ -33,6 +44,11 @@ export default (props) => {
 
     return(
         <div>
+            {
+                load ?
+                <p style={{color: "red"}}>{errors}</p> :
+                ''
+            }
             <h1>Edit EXAMPLE Details</h1>
             {loaded && <Form titleIn={title} priceIn={price} descriptionIn={description} submitProduct={updating} />}
             <DeleteButton id={id} removingDOM={() => navigate("/EXAMPLE")} />

@@ -8,6 +8,9 @@ export default () => {
     const [message, setMessage] = useState("Connecting...");
     const [EXAMPLEs, setEXAMPLEs] = useState([]);
     const [loaded, setLoaded] = useState(false);
+    const [ load, setLoad ] = useState(false);
+    const [ errors, setErrors ] = useState(false);
+
     useEffect(()=>{
         axios.get('http://localhost:8000/api/EXAMPLE')
             .then(res=>{
@@ -27,7 +30,16 @@ export default () => {
                 console.log(res);
                 navigate("/EXAMPLE");
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                const errorResponse = err.response.data.errors; // Get the errors from err.response.data
+                const errorArr = []; // Define a temp error array to push the messages in
+                for (const key of Object.keys(errorResponse)) { // Loop through all errors and get the messages
+                    errorArr.push(errorResponse[key].message)
+                }
+                // Set Errors
+                setErrors(errorArr);
+                setLoad(true);
+            });
     }
 
     const removingDOM = (id) => {
@@ -38,6 +50,11 @@ export default () => {
         <>
             <h1>Connection status: {message}</h1>
             <Form EXAMPLEIn="" submitInput={createEXAMPLE} />
+            {
+                load ?
+                <p style={{color: "red"}}>{errors}</p> :
+                ''
+            }
             <hr/>
             {loaded && <ItemList EXAMPLEs={EXAMPLEs} removingDOM={removingDOM}/>}
         </>
