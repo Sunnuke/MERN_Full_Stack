@@ -26,7 +26,9 @@ export default () => {
         <div style={{width: "60%", margin: "0px auto"}}>
             <div style={{display: "flex", justifyContent: "space-between"}}>
                 <h1 style={{position: "relative", justifySelf: "center"}}>Pirate Crew</h1>
-                <button style={{position: "relative", justifySelf: "right"}} onClick={ e => {navigate("/pirate/new")} }>Add Pirate</button>
+                <div>
+                    <button style={{padding: "10px",position: "relative", justifySelf: "right", marginTop: "30%"}} onClick={ e => {navigate("/pirate/new")} }>Add Pirate</button>
+                </div>
             </div>
             <ItemList items={pirates} removingDOM={removingDOM} />
         </div>

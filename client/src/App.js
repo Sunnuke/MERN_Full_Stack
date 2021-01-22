@@ -3,7 +3,7 @@ import { Router } from "@reach/router";
 import './App.css';
 import ListPage from "./views/ListPage";
 import FormPage from "./views/FormPage";
-// import EditPage from "./views/EditPage";
+import Details from "./views/Details";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <Router>
         <ListPage path="pirate" />
         <FormPage path="pirate/new" />
-        {/* <EditPage path="pirate/:id" /> */}
+        <Details path="pirate/:id" />
       </Router>
     </div>
   );

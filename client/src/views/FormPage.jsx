@@ -30,7 +30,9 @@ export default () => {
         <div style={{width: "60%", margin: "0px auto"}}>
             <div style={{display: "flex", justifyContent: "space-between"}}>
                 <h1 style={{position: "relative", justifySelf: "center"}}>Add Pirate</h1>
-                <button style={{position: "relative", justifySelf: "right"}} onClick={ e => {navigate("/pirate")} }>Crew Board</button>
+                <div>
+                    <button style={{padding: "10px",position: "relative", justifySelf: "right", marginTop: "30%"}} onClick={ e => {navigate("/pirate")} }>Crew Board</button>
+                </div>
             </div>
             {
                 load ?

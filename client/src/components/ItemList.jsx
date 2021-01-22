@@ -9,7 +9,7 @@ export default (props) => {
             {
                 props.items.map((item, i) => {
                     return(
-                        <div key={i}>
+                        <div key={i} id={i}>
                             <div style={{width: "50%", display: "flex", justifyContent: "space-between", margin: "10px auto"}}>
                             <img src={item.imageUrl} width="100" height="90"/>
                                 <div>
