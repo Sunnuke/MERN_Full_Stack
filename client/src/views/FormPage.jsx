@@ -12,7 +12,7 @@ export default () => {
         axios.post("http://localhost:8000/api/pirate/new", pirate)
             .then(res => {
                 console.log(res);
-                navigate("/");
+                navigate("/pirate");
             })
             .catch(err => {
                 const errorResponse = err.response.data.errors; // Get the errors from err.response.data
@@ -34,10 +34,18 @@ export default () => {
             </div>
             {
                 load ?
-                <p style={{color: "red"}}>{errors}</p> :
+                <div>
+                    {
+                        errors.map((error, i) => {
+                            return(
+                                <p style={{color: "red"}}>{error}</p>
+                            )
+                        })
+                    }
+                </div> :
                 ''
             }
-            <Form pirateIn="" submitInput={createPirate} />
+            <Form pirateNameIn="" imageUrlIn="" chestsIn="" catchPhraseIn="" crewPositionIn="" submitInput={createPirate} />
         </div>
     )
 }
