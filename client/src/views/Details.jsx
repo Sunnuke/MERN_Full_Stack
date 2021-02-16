@@ -5,12 +5,30 @@ import { navigate } from "@reach/router";
 export default (props) => {
     const { removingDOM } = props;
     const [pirate, setPirate] = useState({})
-    const [catchPhrase, setCatchPhrase] = useState({})
+    const [catchPhrase, setCatchPhrase] = useState("")
+    const [pegLeg, setPegLeg] = useState("")
+    const [eyePatch, setEyePatch] = useState("")
+    const [hookHand, setHookHand] = useState("")
     useEffect(() => {
         axios.get("http://localhost:8000/api/pirate/" + props.id)
             .then(res => {
                 setPirate(res.data);
                 setCatchPhrase(res.data.catchPhrase);
+                if (res.data.pegLeg) {
+                    setPegLeg("Yes");
+                } else {
+                    setPegLeg("No");
+                }
+                if (res.data.eyePatch) {
+                    setEyePatch("Yes");
+                } else {
+                    setEyePatch("No");
+                }
+                if (res.data.hookHand) {
+                    setHookHand("Yes");
+                } else {
+                    setHookHand("No");
+                }
             })
     }, [])
     return (
@@ -39,15 +57,15 @@ export default (props) => {
                         </tr>
                         <tr>
                             <td>Peg Leg:</td>
-                            <td>{pirate.pegLeg}</td>
+                            <td>{pegLeg}</td>
                         </tr>
                         <tr>
                             <td>Eye Patch:</td>
-                            <td>{pirate.eyePatch}</td>
+                            <td>{eyePatch}</td>
                         </tr>
                         <tr>
                             <td>Hook Hand:</td>
-                            <td>{pirate.hookHand}</td>
+                            <td>{hookHand}</td>
                         </tr>
                     </table>
                 </div>
