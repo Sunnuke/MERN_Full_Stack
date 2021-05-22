@@ -18,7 +18,7 @@ export default (props) => {
 
     return(
         <div>
-            {JSON.stringify({ pirateName, imageUrl, chests, catchPhrase, crewPosition, pegLeg, eyePatch, hookHand })}
+            {/* {JSON.stringify({ pirateName, imageUrl, chests, catchPhrase, crewPosition, pegLeg, eyePatch, hookHand })} */}
             <form onSubmit={Process}>
                 <div style={{display: "flex", justifyContent: "space-between", marginTop: "50px", textAlign: "left"}}>
                     <table>
