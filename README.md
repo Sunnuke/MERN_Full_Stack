@@ -11,8 +11,8 @@ ADDING TO LIST
 <img src="/img/add.JPG">
 <img src="/img/added.JPG">
 
-DELETING FROM LIST
-<img src="/img/delete.JPG">
-
 SELECTING AN ITEM
 <img src="/img/select.JPG">
+
+DELETING FROM LIST
+<img src="/img/delete.JPG">
